@@ -9,6 +9,8 @@ namespace App\Controller;
 // remplace le require_once
 //on indique le namespace de la classe qu'on veut utiliser 
 //et symfony va chercher le fichier automatiquement
+
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -24,18 +26,18 @@ class PageController{
     #[Route('/', name: 'home')]
     public function home()
     {
-        var_dump('page accueil');die;
+       return new Response('<p> page d\'accueil</p>', 200);
     }
 
    #[Route('/contact', name: 'contact')]
    public function contact(){
-       var_dump('page contact');die;
+       return new Response('<p> page contact</p>', 200);
    }
 
    #[Route('/about', name:'about')]
    public function about(){
-       var_dump('page about');die;
-   }
+        return new Response('<p> page about</p>', 200);
+    }
 }
 
 
