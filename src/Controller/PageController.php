@@ -26,6 +26,8 @@ class PageController{
     #[Route('/', name: 'home')]
     public function home()
     {
+        // reesponse permet d'utiliser la fonction response de synfony
+        // elle prend en parametre le contenu de la page et le code http
        return new Response('<p> page d\'accueil</p>', 200);
     }
 
