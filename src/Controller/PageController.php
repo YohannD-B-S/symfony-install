@@ -13,9 +13,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-
-
 //Je cree une class HomeController
 class PageController extends AbstractController{
 
