@@ -11,7 +11,6 @@ namespace App\Controller;
 //et symfony va chercher le fichier automatiquement
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -27,8 +26,10 @@ class PageController extends AbstractController{
     #[Route('/', name: 'home')]
     public function home()
     {
-        // reesponse permet d'utiliser la fonction response de synfony
-        // elle prend en parametre le contenu de la page et le code http
+        // return $this->render('home.html.twig');
+        // $this->render() va chercher le fichier home.html.twig dans le dossier templates
+        // et va l'afficher dans la page d'accueil
+        // et les afficher dans le fichier home.html.twig
        return $this->render('home.html.twig');
     }
 
