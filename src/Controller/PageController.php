@@ -1,7 +1,14 @@
 <?php
 
+//permet de definir le chemin d'un fichier ou d'un dossier
+//obligatoire, doit representer exactement le chemin du fichier
+//en remplaçant le dossier src par App
 namespace App\Controller;
 
+
+// remplace le require_once
+//on indique le namespace de la classe qu'on veut utiliser 
+//et symfony va chercher le fichier automatiquement
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -30,3 +37,13 @@ class PageController{
        var_dump('page about');die;
    }
 }
+
+
+// récupère l'url demandée
+// analayse l'url et récupère la fin ("/", ou "contact" etc)
+// il regarde si dans tous les controleurs créés, il y a une fonction qui a une annotation Route
+// avec la même url que celle demandée par l'utilisateur
+// si oui, il execute la fonction en dessous de l'annotation :
+// il va instancier automatiquement la classe : 
+// $homeController = new HomeController
+// $homeController->home();
