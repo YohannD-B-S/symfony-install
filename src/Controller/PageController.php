@@ -10,6 +10,7 @@ namespace App\Controller;
 //on indique le namespace de la classe qu'on veut utiliser 
 //et symfony va chercher le fichier automatiquement
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 //Je cree une class HomeController
-class PageController{
+class PageController extends AbstractController{
 
     // Je cree une methode home qui va afficher la page d'accueil
     // Je lui donne une annotation Route /home et je l'appelle home
@@ -28,17 +29,17 @@ class PageController{
     {
         // reesponse permet d'utiliser la fonction response de synfony
         // elle prend en parametre le contenu de la page et le code http
-       return new Response('<p> page d\'accueil</p>', 200);
+       return $this->render('home.html.twig');
     }
 
    #[Route('/contact', name: 'contact')]
    public function contact(){
-       return new Response('<p> page contact</p>', 200);
+      return $this->render('contact.html.twig');
    }
 
    #[Route('/about', name:'about')]
    public function about(){
-        return new Response('<p> page about</p>', 200);
+        return $this->render('about.html.twig');
     }
 }
 
