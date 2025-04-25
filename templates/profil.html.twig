@@ -1,0 +1,37 @@
+<html>
+
+
+
+    <body>
+    
+    
+    <main>
+    
+        <h1>Profils</h1>
+           
+            {% for profils in profils %}
+               
+                    <article>
+                        <h2>{{ profils.firstName }} {{ profils.lastName }}</h2>
+                        <p>{{ profils.job }}</p>
+                        <p>Langages : {{ profils.languages|join(', ') }}</p>
+                        <p>Recherche un emploi : {{ profils.looksForJob ? 'Oui' : 'Non' }}</p>
+                        <img src="{{ asset(profil.avatar) }}" alt="Avatar de {{ profils.firstName }}" width="200" height="200">
+                    </article>
+
+                {% endfor %}
+               
+    </main>
+    
+    
+    
+    
+    
+    </body>
+    
+    
+    
+    
+    
+    
+    </html>

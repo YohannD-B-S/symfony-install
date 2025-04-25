@@ -11,12 +11,20 @@
 
     <ul>
         {% for article in articles %}
-        
+
+        {% if article.is_published%}
+
           <article>
 
                 <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
+                <p>Publié le {{ article.created_at|date('d/m/Y') }}</p>
+                <img> src="{{ asset('uploads/' ~ article.image) }}" alt="Image de l'article" width="200" height="200">
+
 
             </article>
+
+        {% endif %}
 
         {% endfor %}
 
